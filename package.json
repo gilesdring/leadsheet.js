@@ -1,0 +1,20 @@
+{
+  "author": "Giles Dring <gilesdring@gmail.com>",
+  "name": "LeadSheet",
+  "description": "Formatter for simple chord lead sheets",
+  "version": "0.0.1",
+  "main": "./lib/leadsheet.js",
+  "bin": { "leadsheet": "./bin/leadsheet-cli.js"},
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "keywords": ["music", "leadsheet", "chords", "guitar", "tab", "lyrics"],
+  "directories": {
+    "lib": "./lib",
+    "bin": "./bin"
+  },
+  "repository": "http://tbd"
+}

@@ -1,0 +1,44 @@
+#!/usr/bin/env node
+
+// Get args, ignoring first two
+var args = process.argv.slice(2)
+
+var fs = require( 'fs' );
+var leadsheet = require( '../lib/leadsheet' );
+
+if ( ! args[0] ) {
+  var usage = [ '',
+    'Usage: ' + process.argv[1].replace( /.*\//, "" ) + ' <input_filename> (<output_filename>)',
+    '',
+    'Where',
+    '   <input_filename>   Name of file containing the LeadSheet markup',
+    '   <output_filename>  Name of file in which to place the output',
+    '',
+  ].join("\n")
+  console.error( usage )
+  process.exit(0)
+}
+
+var infile = args[0]
+var outfile = args[1] ? args[1] : args[0].replace( /(\.[^\.]+){0,1}$/, ".html" )
+
+try {
+  var data = fs.readFileSync( args[0], 'utf8' );
+}
+catch (err) {
+  console.error("Oopsie");
+  process.exit(1)
+}
+
+console.log( 'Converting ' + infile + ' to ' + outfile )
+var lsp = new leadsheet.LeadSheet()
+lsp.parse( data )
+
+var result = leadsheet.LeadSheet.xml( 'html', 
+  leadsheet.LeadSheet.xml( 'head',
+    leadsheet.LeadSheet.xml( 'style', leadsheet.LeadSheet.stylesheet() ) +
+  leadsheet.LeadSheet.xml( 'body', lsp.emit() )
+  )
+)
+
+fs.writeFileSync( outfile, result )
