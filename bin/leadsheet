@@ -36,9 +36,9 @@ lsp.parse( data )
 
 var result = leadsheet.LeadSheet.xml( 'html', 
   leadsheet.LeadSheet.xml( 'head',
-    leadsheet.LeadSheet.xml( 'style', leadsheet.LeadSheet.stylesheet() ) +
+    leadsheet.LeadSheet.xml( 'style', leadsheet.LeadSheet.stylesheet() )
+  ) +
   leadsheet.LeadSheet.xml( 'body', lsp.emit() )
-  )
 )
 
 fs.writeFileSync( outfile, result )
