@@ -14,24 +14,24 @@ The concept was inspired by [Markdown][MD].
 
 ## Examples ##
 
-The following 
+The following
 
     Title: My Song  
     Artist: Me  
-    
+
     + Cref x,3,2,0,1,0 C  
-    
+
     Verse 1=  
     This is my [Cref]song  
-    It's not too [Dref]long 
-    
+    It's not too [Dref]long
+
     Chorus =  
     So hear my [Eref]song  
     And now it's [Cref]gone  
 
 Renders to
 
-<iframe>
+<html>
 <style>.leadsheet { width: 210mm; padding: 20mm; } /* Page setup */.header { text-align: center; padding-bottom: 2em; }.title { font-size: 2em; font-weight: bold; }.artist { font-size: 1.5em; }.chords { text-align: center; padding-bottom: 2em; }.chord { display: inline; }.chordbox { width: 2cm; height: 2cm; }.chordbox text.fretmarker { font-size: 60%; font-style: italic; dominant-baseline: central; text-anchor: end; }.chordbox text.chordname { text-anchor: middle; }.chordbox circle.fretted { fill: black; stroke: black; }.chordbox circle.open { fill: none; stroke: black; }.chordbox line, .chordbox path { stroke-linecap: square; stroke: black; }.chordbox line.fret { }.chordbox line.nut { stroke-width: 2px; }.chordbox line.string { }.chordbox path.unplayed { }.stanza { padding-bottom: 2em; }.repeat { display: inline-block; float: right; font-style: italic; }.repeat:before { content: 'repeat x '; }.stanzaline { }.withchords { padding-top: 1em; }.stanzaname { font-style: italic; }.stanzaname:after { content: ':'; }.barsystem { border-left: 2px solid; margin: 0 0 1ex 0; }.bar { border-right: 2px solid; display: inline-block; width: 7em; padding: 0 1em; text-align: center; }.barelement { display: inline-block; padding: 0 5px; }.lyric { display: inline; }.chordref { width: 0; display: inline-block; position: relative; top: -1em; text-align: center; vertical-align: baseline; }.undefined { color: red; }</style>
 <div class='leadsheet'>
   <div class='header'>
@@ -54,7 +54,4 @@ Renders to
     </div>
   </div>
 </div>
-</iframe>
-
-
-
+</html>
